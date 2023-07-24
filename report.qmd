@@ -1,0 +1,67 @@
+---
+author: Students
+title: Assignment 1
+date: last-modified
+date-format: long
+code-color-bg: lightgray
+header-includes:
+  \usepackage{fancyhdr}
+  \usepackage{fancyvrb}
+  \usepackage{float}
+  \usepackage{booktabs}
+  \usepackage{lscape}
+  \usepackage{amsmath}
+  \usepackage{graphicx}
+  \usepackage{algorithm}
+  \usepackage{algpseudocode}
+  \DeclareMathOperator*{\argmin}{arg\,min}
+pdf-engine: xelatex
+format:
+    pdf:
+        documentclass: article
+        toc: false
+        number-sections: false
+        number-depth: 2
+        colorlinks: true
+        fig-pos: 'H'
+        fig-align: center
+        geometry:
+            - top = 30mm
+            - bottom = 30mm
+            - left = 20mm
+            - right = 20mm
+        papersize: dina4
+bibliography: [references.bib, packages.bib]
+echo: false
+eval: true
+messages: false
+error: false
+warning: false
+nocite: '@*'
+---
+
+\pagestyle{fancy}
+
+```{r, echo=FALSE}
+
+suppressWarnings(suppressMessages(source("main.r")))
+suppressWarnings(suppressMessages(knitr::write_bib(c(.packages(), "bookdown"), "packages.bib")))
+
+```
+
+{{< pagebreak >}}
+
+# Code
+Below, you can find the code for this project.
+
+### main.r script
+```{r, file = "main.r", echo=TRUE, eval=FALSE}
+
+```
+### toolbox.r script
+```{r, file = "./dev/toolbox.r", echo=TRUE, eval=FALSE}
+
+```
+{{< pagebreak >}}
+
+# References
