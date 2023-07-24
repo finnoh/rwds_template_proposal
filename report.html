@@ -101,7 +101,13 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#code" id="toc-code" class="nav-link active" data-scroll-target="#code">Code</a></li>
+  <li><a href="#chapter-1" id="toc-chapter-1" class="nav-link active" data-scroll-target="#chapter-1">Chapter 1</a></li>
+  <li><a href="#chapter-2" id="toc-chapter-2" class="nav-link" data-scroll-target="#chapter-2">Chapter 2</a></li>
+  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a>
+  <ul class="collapse">
+  <li><a href="#main.r" id="toc-main.r" class="nav-link" data-scroll-target="#main.r">main.r</a></li>
+  <li><a href="#devtoolbox.r" id="toc-devtoolbox.r" class="nav-link" data-scroll-target="#devtoolbox.r">dev/toolbox.r</a></li>
+  </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -137,13 +143,26 @@ div.csl-indent {
 
 </header>
 
+<section id="chapter-1" class="level1">
+<h1>Chapter 1</h1>
+<p>A lot of text</p>
+</section>
+<section id="chapter-2" class="level1">
+<h1>Chapter 2</h1>
+<p>Very good writing.</p>
 <div style="page-break-after: always;"></div>
+</section>
 <section id="code" class="level1">
 <h1>Code</h1>
 <p>Below, you can find the code for this project.</p>
+<section id="main.r" class="level2">
+<h2 class="anchored" data-anchor-id="main.r">main.r</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource R number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Setup -----------------------------------------</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="co"># source the toolbox</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="fu">source</span>(<span class="st">"./dev/toolbox.r"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="devtoolbox.r" class="level2">
+<h2 class="anchored" data-anchor-id="devtoolbox.r">dev/toolbox.r</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource R number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Setup -----------------------------------------</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(pacman)) {</span>
 <span id="cb2-3"><a href="#cb2-3"></a>    <span class="fu">install.packages</span>(<span class="st">"pacman"</span>)</span>
@@ -160,6 +179,7 @@ div.csl-indent {
 <span id="cb2-14"><a href="#cb2-14"></a>}</span>
 <span id="cb2-15"><a href="#cb2-15"></a></span>
 <span id="cb2-16"><a href="#cb2-16"></a><span class="co"># Functions -----------------------------------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 </section>
 <section id="references" class="level1 unnumbered">
 
