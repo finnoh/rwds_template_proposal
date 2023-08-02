@@ -7,9 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Author1, Author2">
-<meta name="dcterms.date" content="2023-07-24">
+<meta name="dcterms.date" content="2023-07-28">
+<meta name="description" content="A template to help contributors style their articles and make use of different Quarto features.">
 
-<title>RWDS Article</title>
+<title>How to create an article for Real World Data Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -101,12 +102,10 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#chapter-1" id="toc-chapter-1" class="nav-link active" data-scroll-target="#chapter-1">Chapter 1</a></li>
-  <li><a href="#chapter-2" id="toc-chapter-2" class="nav-link" data-scroll-target="#chapter-2">Chapter 2</a></li>
-  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a>
+  <li><a href="#an-example-main-heading" id="toc-an-example-main-heading" class="nav-link active" data-scroll-target="#an-example-main-heading">An example main heading</a></li>
+  <li><a href="#another-example-main-heading" id="toc-another-example-main-heading" class="nav-link" data-scroll-target="#another-example-main-heading">Another example main heading</a>
   <ul class="collapse">
-  <li><a href="#main.r" id="toc-main.r" class="nav-link" data-scroll-target="#main.r">main.r</a></li>
-  <li><a href="#devtoolbox.r" id="toc-devtoolbox.r" class="nav-link" data-scroll-target="#devtoolbox.r">dev/toolbox.r</a></li>
+  <li><a href="#an-example-secondary-heading-and-a-code-block" id="toc-an-example-secondary-heading-and-a-code-block" class="nav-link" data-scroll-target="#an-example-secondary-heading-and-a-code-block">An example secondary heading and a code block</a></li>
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
@@ -116,9 +115,19 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">RWDS Article</h1>
-</div>
+<h1 class="title">How to create an article for Real World Data Science</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Resources</div>
+    <div class="quarto-category">for</div>
+    <div class="quarto-category">Contributors</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    <p>A template to help contributors style their articles and make use of different Quarto features.</p>
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -133,7 +142,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 24, 2023</p>
+      <p class="date">July 28, 2023</p>
     </div>
   </div>
   
@@ -143,42 +152,55 @@ div.csl-indent {
 
 </header>
 
-<section id="chapter-1" class="level1">
-<h1>Chapter 1</h1>
-<p>A lot of text</p>
-</section>
-<section id="chapter-2" class="level1">
-<h1>Chapter 2</h1>
+<p>Intro text to go here.</p>
+<section id="an-example-main-heading" class="level2">
+<h2 class="anchored" data-anchor-id="an-example-main-heading">An example main heading</h2>
 <p>Very good writing.</p>
-<div style="page-break-after: always;"></div>
 </section>
-<section id="code" class="level1">
-<h1>Code</h1>
+<section id="another-example-main-heading" class="level2">
+<h2 class="anchored" data-anchor-id="another-example-main-heading">Another example main heading</h2>
 <p>Below, you can find the code for this project.</p>
-<section id="main.r" class="level2">
-<h2 class="anchored" data-anchor-id="main.r">main.r</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource R number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Setup -----------------------------------------</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># source the toolbox</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">source</span>(<span class="st">"./dev/toolbox.r"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="devtoolbox.r" class="level2">
-<h2 class="anchored" data-anchor-id="devtoolbox.r">dev/toolbox.r</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource R number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Setup -----------------------------------------</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(pacman)) {</span>
-<span id="cb2-3"><a href="#cb2-3"></a>    <span class="fu">install.packages</span>(<span class="st">"pacman"</span>)</span>
-<span id="cb2-4"><a href="#cb2-4"></a>}</span>
-<span id="cb2-5"><a href="#cb2-5"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse, ggpubr, kableExtra)</span>
-<span id="cb2-6"><a href="#cb2-6"></a></span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="co"># common theme to add to all ggplot plots</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a>mytheme <span class="ot">&lt;-</span>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="co"># create a common format for all your tables</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a>create_table <span class="ot">&lt;-</span> <span class="cf">function</span>(df){</span>
-<span id="cb2-11"><a href="#cb2-11"></a>    df <span class="sc">|&gt;</span></span>
-<span id="cb2-12"><a href="#cb2-12"></a>    kableExtra<span class="sc">::</span><span class="fu">kbl</span>(<span class="at">digits =</span> <span class="dv">3</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-13"><a href="#cb2-13"></a>    kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(<span class="at">latex_options =</span> <span class="fu">c</span>(<span class="st">"HOLD_position"</span>, <span class="st">"scale_down"</span>))</span>
-<span id="cb2-14"><a href="#cb2-14"></a>}</span>
-<span id="cb2-15"><a href="#cb2-15"></a></span>
-<span id="cb2-16"><a href="#cb2-16"></a><span class="co"># Functions -----------------------------------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="an-example-secondary-heading-and-a-code-block" class="level3">
+<h3 class="anchored" data-anchor-id="an-example-secondary-heading-and-a-code-block">An example secondary heading and a code block</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set_signif_par</span>()</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">pch=</span><span class="dv">19</span>, <span class="at">cex=</span><span class="dv">3</span>, <span class="at">xlab=</span><span class="st">""</span>, <span class="at">ylab=</span><span class="st">""</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"My Significance Plot"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">sub =</span> <span class="st">"Source: data source"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">v=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">col =</span> <span class="st">"lightgrey"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="article-btn">
+<p><a href="url">Back to section homepage</a></p>
+</div>
+<div class="further-info">
+<div class="grid">
+<div class="g-col-12 g-col-md-12">
+<dl>
+<dt>About the author</dt>
+<dd>
+Author 1 is… and Author 2 is…
+</dd>
+</dl>
+</div>
+<div class="g-col-12 g-col-md-6">
+<dl>
+<dt>Copyright and licence</dt>
+<dd>
+© 2023 Author 1 and Author 2
+</dd>
+</dl>
+<p><a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> <img style="height:22px!important;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a> This article is licensed under a Creative Commons Attribution 4.0 (CC BY 4.0) <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> International licence</a>. Thumbnail photo credit and licence goes here.</p>
+</div>
+<div class="g-col-12 g-col-md-6">
+<dl>
+<dt>How to cite</dt>
+<dd>
+1, Author, and Author 2. 2023. “How to create an article for Real World Data Science.” Real World Data Science, Month Day, Year. <a href="url">URL</a>
+</dd>
+</dl>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="references" class="level1 unnumbered">

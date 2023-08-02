@@ -1,10 +1,15 @@
 ---
-title: RWDS Article
+title: How to create an article for Real World Data Science
+description: |
+  A template to help contributors style their articles and make use of different Quarto features.
+categories:
+  - Resources
+  - for
+  - Contributors
 author: Author1, Author2
-toc: true
 date: last-modified
 date-format: long
-code-color-bg: lightgray
+toc: true
 format:
   html:
     theme: [lux, rwds.scss]
@@ -15,43 +20,57 @@ format:
       body-width: 1000px
       margin-width: 250px
 bibliography: references.bib
-filters:
-   - include-code-files
 csl: chicago.csl
-echo: false
-eval: true
+echo: true
+eval: false
 messages: false
 error: false
 warning: false
 nocite: '@*'
 ---
 
-```{r, echo=FALSE}
+Intro text to go here.
 
-suppressWarnings(suppressMessages(source("main.r")))
-suppressWarnings(suppressMessages(knitr::write_bib(c(.packages(), "bookdown"), "packages.bib")))
-
-```
-
-# Chapter 1
-
-A lot of text
-
-# Chapter 2
+## An example main heading
 
 Very good writing.
 
-{{< pagebreak >}}
-
-# Code
+## Another example main heading
 Below, you can find the code for this project.
 
-## main.r
-```{.R include="main.r" code-line-numbers="true"}
+### An example secondary heading and a code block
+
+``` {r}
+set_signif_par()
+plot(1:4, 1:4, col=1:4, pch=19, cex=3, xlab="", ylab="",
+     main = "My Significance Plot",
+     sub = "Source: data source")
+abline(h=1:4, v=1:4, col = "lightgrey")
 ```
 
-## dev/toolbox.r
-```{.R include="dev/toolbox.r" code-line-numbers="true"}
-```
+::: {.article-btn}
+[Back to section homepage](url)
+:::
+
+::: {.further-info}
+::: grid
+::: {.g-col-12 .g-col-md-12}
+About the author
+: Author 1 is... and Author 2 is...
+:::
+::: {.g-col-12 .g-col-md-6}
+Copyright and licence
+: &copy; 2023 Author 1 and Author 2
+
+<a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> <img style="height:22px!important;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a> This article is licensed under a Creative Commons Attribution 4.0 (CC BY 4.0) <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> International licence</a>. Thumbnail photo credit and licence goes here.
+  
+:::
+
+::: {.g-col-12 .g-col-md-6}
+How to cite
+: 1, Author, and Author 2. 2023. "How to create an article for Real World Data Science." Real World Data Science, Month Day, Year. [URL](url)
+:::
+:::
+:::
 
 # References
