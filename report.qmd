@@ -33,25 +33,4 @@ suppressWarnings(suppressMessages(knitr::write_bib(c(.packages(), "bookdown"), "
 
 ```
 
-# Chapter 1
 
-A lot of text
-
-# Chapter 2
-
-Very good writing.
-
-{{< pagebreak >}}
-
-# Code
-Below, you can find the code for this project.
-
-## main.r
-```{.R include="main.r" code-line-numbers="true"}
-```
-
-## dev/toolbox.r
-```{.R include="dev/toolbox.r" code-line-numbers="true"}
-```
-
-# References
