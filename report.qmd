@@ -19,6 +19,7 @@ format:
       sidebar-width: 0px
       body-width: 1000px
       margin-width: 250px
+    code-annotations: below
 bibliography: references.bib
 csl: chicago.csl
 echo: true
@@ -27,9 +28,14 @@ messages: false
 error: false
 warning: false
 nocite: '@*'
+citation: false
 ---
 
-Intro text to go here.
+<!-- TODO: Should we have the YAML citation=true? It might make things more coherent -->
+<!-- TODO: Insert some bullet points on writing tips -->
+<!-- TODO: Improve the structure of the article -->
+
+Intro text to go here. Note that the standard setting for code executing is `eval: false`. Please insert graphs and tables as static objects, i.e. `.png` files or markdown tables, as it otherwise takes too long to render the full RWDS website.
 
 ## An example main heading
 
@@ -40,6 +46,10 @@ Below, you can find the code for this project.
 
 ### An example secondary heading and a code block
 
+## Adding non-text elements
+
+You can add code like this:
+
 ``` {r}
 set_signif_par()
 plot(1:4, 1:4, col=1:4, pch=19, cex=3, xlab="", ylab="",
@@ -47,6 +57,131 @@ plot(1:4, 1:4, col=1:4, pch=19, cex=3, xlab="", ylab="",
      sub = "Source: data source")
 abline(h=1:4, v=1:4, col = "lightgrey")
 ```
+
+Not only in `R`, but also in `Python`:
+
+``` {python}
+import pandas as pd
+print("Hello this is Python code")
+```
+
+or `Julia`:
+
+``` {julia}
+using Plots
+
+plot(sin, 
+     x->sin(2x), 
+     0, 
+     2π, 
+     leg=false, 
+     fill=(0,:lavender))
+```
+
+If you want to show how to write a specific code-chunk in Quarto, you can use the `echo: fenced` option to show the code in the output.
+
+```{r}
+#| echo: fenced
+#| code-line-numbers: true
+# This is a fenced code block with some R code, that show the option code-line-numbers: true.
+# Note that echo: fenced is hidden in the output.
+x <- 1:10
+y <- x^2
+plot(x, y)
+```
+
+Take a look at how to do [interactive code annotations](https://quarto.org/docs/authoring/code-annotation.html#annotation-syntax), as these are also supported on Real World Data Science. You can see an example here (try clicking on the numbers for the highlighting):
+
+```{r}
+#| code-line-numbers: true
+library(tidyverse)
+library(palmerpenguins)
+penguins |>                                      # <1>
+  mutate(                                        # <2>
+    bill_ratio = bill_depth_mm / bill_length_mm, # <2>
+    bill_area  = bill_depth_mm * bill_length_mm  # <2>
+  )                                              # <2>
+```
+1. Take `penguins`, and then,
+2. add new columns for the bill ratio and bill area.
+
+You can also add images:
+
+![](https://realworlddatascience.net/images/rwds-logo-150px.png)
+
+You can make use of Quarto's options to arrange multiple images in a grid, and link to both URLs and local files. Also you can add captions to images that contain links.
+
+::: {layout="[[1,1], [1]]"}
+![[Data](https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2006&q=80)](https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2006&q=80)
+
+![[Laptop](https://images.unsplash.com/photo-1538688273852-e29027c0c176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)](https://images.unsplash.com/photo-1538688273852-e29027c0c176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)
+
+![[Cover of The Repo Newsletter](https://dsecon.substack.com)](repo_cover.png){width=20%}
+:::
+
+## Other formatting and HTML objects
+
+You can add a warning to your writing like this:
+
+::: {.callout-warning style="margin-top: 0.75rem;" appearance="simple"}
+This is a warning!
+:::
+
+
+If your remark is too benign for a warning, but still valuable information for the reader, consider a note
+
+::: {.callout-note style="margin-top: 2.25rem;" appearance="simple"}
+Want to hear more from the RSS Data Science and AI Section? Sign up for its newsletter at [rssdsaisection.substack.com](https://rssdsaisection.substack.com/).
+:::
+
+You can add a footnote to your writing^[in case you want to give an extra reference or link to a source]
+
+By adding your references as bibtex to the `references.bib` file in this repository, you not only maintain your references automatically in the right format, but you can also cite your references directly as recommended by @example-bibtexkey, or indirectly [compare to @example-bibtexkey].
+
+If your tutorial includes tips on special keyboard shortcuts, you can typeset them like this: *To print, press* {{< kbd Shift-Ctrl-P >}}. *To open an existing new project, press* {{< kbd mac=Shift-Command-O win=Shift-Control-O linux=Shift-Ctrl-L >}}.
+
+You can write equations in-line like this $y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{, }$ or in a separate block like this
+$$
+y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{. }
+$$ {#eq-first}
+
+@eq-first is an example of a reference to an equation.
+
+Learn everything about cross-references in Quarto [here](https://quarto.org/docs/authoring/cross-references.html#equations).
+
+Rather than creating diagrams in Canva, Figma, or PowerPoint and pasting them into your article as an image, consider using [Mermaid](https://mermaid-js.github.io/mermaid/#/). Note how the chunk options fore Mermaid start with `%%|` and that you need to set the option `eval: true` and `echo: false` to only generate your graph and not the code that created it.
+
+```{mermaid}
+%%| eval: true
+%%| echo: false
+flowchart LR
+  A[Hard edge] --> B(Round edge)
+  B --> C{Decision}
+  C --> D[Result one]
+  C --> E[Result two]
+```
+
+
+On rare occasions, you might want to add an image, graph, equation, table, or simple text in the margin of the page, to further substantiate a claim that you make. Here we put the RWDS logo in the margin.
+
+::: {.column-margin}
+![RWDS Logo in the maring](https://realworlddatascience.net/images/rwds-logo-150px.png)
+:::
+
+<!-- TODO: Should we add pullquotes?
+::: {.pullquote-container}
+::: grid
+::: {.g-col-12 .g-col-lg-12 .pullquote-grid .pullquote}
+![](/images/pullquote-purple.png){width="50px"}
+
+This is a very large quote. It can be used to highlight important parts of your text.
+
+:::
+:::
+::: -->
+
+
+``` {r}
 
 ::: {.article-btn}
 [Back to section homepage](url)
@@ -73,3 +208,4 @@ How to cite
 :::
 :::
 
+<!--- TODO: Add the comment section here. --->

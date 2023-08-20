@@ -1,0 +1,9 @@
+{
+    "grammarly.selectors": [
+        {
+            "language": "quarto",
+            "scheme": "file",
+            "pattern": "report.qmd"
+        }
+    ]
+}
