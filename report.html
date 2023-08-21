@@ -115,8 +115,8 @@ div.csl-indent {
   </ul></li>
   <li><a href="#another-main-section-writing-code" id="toc-another-main-section-writing-code" class="nav-link" data-scroll-target="#another-main-section-writing-code">Another main section: Writing code</a></li>
   <li><a href="#figures-and-their-layout" id="toc-figures-and-their-layout" class="nav-link" data-scroll-target="#figures-and-their-layout">Figures and their layout</a></li>
-  <li><a href="#adding-html-objects" id="toc-adding-html-objects" class="nav-link" data-scroll-target="#adding-html-objects">Adding HTML objects</a></li>
   <li><a href="#creating-diagrams" id="toc-creating-diagrams" class="nav-link" data-scroll-target="#creating-diagrams">Creating diagrams</a></li>
+  <li><a href="#some-icing-on-the-cake" id="toc-some-icing-on-the-cake" class="nav-link" data-scroll-target="#some-icing-on-the-cake">Some icing on the cake</a></li>
   </ul>
 </nav>
 </div>
@@ -166,14 +166,15 @@ div.csl-indent {
 <!-- TODO: Improve the structure of the article -->
 <!-- TODO: Does this work with the Shiny app online? -->
 <!-- TODO: Set server: shiny in case we run shiny app -->
-<p>This is a template for writing RWDS articles in <code>Quarto</code>. You can learn everything about this framework in their <a href="https://quarto.org">excellent documentation</a>.</p>
+<!-- TODO: How to integrate this template with the submission process? -->
+<p>This is a template for writing RWDS articles in <a href="https://quarto.org"><code>Quarto</code></a>. Please insert graphs and tables as static objects, i.e.&nbsp;<code>.png</code> files or markdown tables, rather than generating them by code, as it otherwise takes too long to render the full RWDS website.</p>
 <!-- TODO: What about creating the files once and freezing them? Is there a more elegant way? -->
-<p>Please insert graphs and tables as static objects, i.e.&nbsp;<code>.png</code> files or markdown tables, rather than generating them by code, as it otherwise takes too long to render the full RWDS website.</p>
+<p>For the content of your writing, make sure to check out the resources on <a href="https://realworlddatascience.net/contributor-docs/call-for-contributions.html">RWDS—Call for Contributions</a>.</p>
 <section id="a-main-section-about-writing-text" class="level2">
 <h2 class="anchored" data-anchor-id="a-main-section-about-writing-text">A main section about writing text</h2>
+<p>Notice how the headings and their hierarchy also show up in the table of contents on the right-hand side.</p>
 <p>Very good writing also comes in <strong>bold</strong>, <em>italics</em>, and <del>strikethrough</del>.</p>
-<!-- You can also write comments for yourself, which won't show up in the rendered documents. However, be aware that these comments will be displayed in the online source code in the RWDS repository, so don't tell any secrets in here. -->
-<p>Note how the headings and their hierarchy also shows up in the table of contents on the right handside.</p>
+<!-- You can also write comments for yourself, which won't show up in the rendered documents. However, be aware that these comments will be displayed in the online source code in the RWDS repository, so don't tell any secrets here. -->
 <p>In this subsection, we will show how to create lists and blockquotes:</p>
 <ol type="1">
 <li>First item</li>
@@ -190,8 +191,10 @@ div.csl-indent {
 <p>You can make profound statements in a blockquote</p>
 </blockquote>
 <p>You can add a footnote to your writing<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>By adding your references as bibtex to the <code>references.bib</code> file in this repository, you not only maintain your references automatically in the right citation style, but you can also cite your references directly as recommended by <span class="citation" data-cites="example-bibtexkey">Doe (<a href="#ref-example-bibtexkey" role="doc-biblioref">2020</a>)</span>, or indirectly <span class="citation" data-cites="example-bibtexkey">(compare to <a href="#ref-example-bibtexkey" role="doc-biblioref">Doe 2020</a>)</span>.</p>
-<p>If your tutorial includes tips on special keyboard shortcuts, you can typeset them like this: <em>To print, press</em> <kbd>Shift-Ctrl-P</kbd>. <em>To open an existing new project, press</em> <kbd data-linux="Shift-Ctrl-L" data-mac="Shift-Command-O" data-windows="Shift-Control-O"></kbd>.</p>
+<p>By adding your references as BibTeX to the <code>references.bib</code> file in this repository, you not only maintain your references in the right citation style, but you can also cite directly, as recommended by <span class="citation" data-cites="example-bibtexkey">Doe (<a href="#ref-example-bibtexkey" role="doc-biblioref">2020</a>)</span>, or indirectly <span class="citation" data-cites="example-bibtexkey">(see <a href="#ref-example-bibtexkey" role="doc-biblioref">Doe 2020</a>)</span>.</p>
+<p>By writing <code>---</code>, you can add a vertical line.</p>
+<hr>
+<p>If your tutorial includes tips on special keyboard shortcuts, you can typeset them like this: <em>To print, press</em> <kbd>Shift-Ctrl-P</kbd>. <em>To open an existing new project, press</em> <kbd data-mac="Shift-Command-O" data-windows="Shift-Control-O" data-linux="Shift-Ctrl-L"></kbd>.</p>
 <p>You can write equations in-line like this <span class="math inline">\(y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{, }\)</span> or in a separate block like this <span id="eq-first"><span class="math display">\[
 y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{. }
 \tag{1}\]</span></span></p>
@@ -234,7 +237,7 @@ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{. }
 </table>
 </div>
 <p>You can also reference great tables such as <a href="#tbl-example">Table&nbsp;1</a>.</p>
-<p>If needbe, you can also add subtables:</p>
+<p>If needed, you can also add subtables:</p>
 <div id="tbl-panel" class="tbl-parent quarto-layout-panel anchored">
 <div class="panel-caption table-caption">
 <p>Table&nbsp;2: Main Caption</p>
@@ -339,7 +342,7 @@ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{. }
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>     leg<span class="op">=</span><span class="cn">false</span>, </span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>     fill<span class="op">=</span>(<span class="fl">0</span>,<span class="op">:</span>lavender))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>If you want to show how to write a specific code-chunk in <code>Quarto</code>, you can use the <code>echo: fenced</code> option to show the code in the output.</p>
+<p>If you want to show how to write a specific code chunk in <code>Quarto</code>, you can use the <code>echo: fenced</code> option to show the code in the output.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a fenced code block with some R code</span></span>
@@ -377,11 +380,11 @@ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{. }
 <p><img src="https://realworlddatascience.net/images/rwds-logo-150px.png" class="img-fluid"></p>
 <p>and resize them</p>
 <p><img src="https://realworlddatascience.net/images/rwds-logo-150px.png" class="img-fluid" style="width:10.0%"></p>
-<p>You can make use of Quarto’s options to arrange multiple images in a grid, and link to both URLs and local files. Also you can add captions to images that contain links.</p>
+<p>You can make use of Quarto’s options to arrange multiple images in a grid, and link to both URLs and local files. Also, you can add captions to images that contain links. Local images should be stored in the folder <code>images</code> and in <code>.png</code> format.</p>
 <div id="fig-layout" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 33.3%;justify-content: center;">
 <div id="fig-data" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=2006&amp;q=80" class="img-fluid figure-img" data-ref-parent="fig-layout"></p>
@@ -389,7 +392,7 @@ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{. }
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 33.3%;justify-content: center;">
 <div id="fig-laptop" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="https://images.unsplash.com/photo-1538688273852-e29027c0c176?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=2070&amp;q=80" class="img-fluid figure-img" data-ref-parent="fig-layout"></p>
@@ -397,12 +400,10 @@ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{. }
 </figure>
 </div>
 </div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 33.3%;justify-content: center;">
 <div id="fig-repo" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="repo_cover.png" class="img-fluid figure-img" data-ref-parent="fig-layout"></p>
+<p><img src="/images/repo_cover.png" class="img-fluid figure-img" data-ref-parent="fig-layout"></p>
 <figcaption class="figure-caption">(c) <a href="https://dsecon.substack.com">Cover of The Repo Newsletter</a></figcaption>
 </figure>
 </div>
@@ -430,33 +431,6 @@ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{. }
 </div>
 </div>
 </div>
-</section>
-<section id="adding-html-objects" class="level2">
-<h2 class="anchored" data-anchor-id="adding-html-objects">Adding HTML objects</h2>
-<p>You can add a warning to your writing like this:</p>
-<div class="callout callout-style-simple callout-warning" style="margin-top: 0.75rem;">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>This is a warning!</p>
-</div>
-</div>
-</div>
-<p>If your remark is too benign for a warning, but still valuable information for the reader, consider a note</p>
-<div class="callout callout-style-simple callout-note" style="margin-top: 2.25rem;">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Want to hear more from the RSS Data Science and AI Section? Sign up for its newsletter at <a href="https://rssdsaisection.substack.com/">rssdsaisection.substack.com</a>.</p>
-</div>
-</div>
-</div>
-<p>To add more media to your article, consider embedding a video:</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/wo9vZccmqwc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
 <section id="creating-diagrams" class="level2">
 <h2 class="anchored" data-anchor-id="creating-diagrams">Creating diagrams</h2>
@@ -488,6 +462,33 @@ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{. }
 </div>
 </div>
 </div>
+</section>
+<section id="some-icing-on-the-cake" class="level2">
+<h2 class="anchored" data-anchor-id="some-icing-on-the-cake">Some icing on the cake</h2>
+<p>You can add a warning to your writing like this:</p>
+<div class="callout callout-style-simple callout-warning" style="margin-top: 0.75rem;">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>This is a warning!</p>
+</div>
+</div>
+</div>
+<p>If your remark is too benign for a warning, but still valuable information for the reader, consider a note</p>
+<div class="callout callout-style-simple callout-note" style="margin-top: 2.25rem;">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Want to hear more from the RSS Data Science and AI Section? Sign up for its newsletter at <a href="https://rssdsaisection.substack.com/">rssdsaisection.substack.com</a>.</p>
+</div>
+</div>
+</div>
+<p>To add more media to your article, consider embedding a video:</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/wo9vZccmqwc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <!-- TODO: This leads to weird formatting of the rest of the article. Also: How does this work when hosted? -->
 <!-- https://quarto.org/docs/interactive/shiny/ -->
 <div class="article-btn">
