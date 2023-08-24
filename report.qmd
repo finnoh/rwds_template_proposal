@@ -28,14 +28,9 @@ messages: false
 error: false
 warning: false
 nocite: '@*'
-citation: false
+citation: true
 ---
 
-<!-- TODO: Should we have the YAML citation=true? It might make things more coherent -->
-<!-- TODO: Insert some bullet points on writing tips -->
-<!-- TODO: Improve the structure of the article -->
-<!-- TODO: Does this work with the Shiny app online? -->
-<!-- TODO: Set server: shiny in case we run shiny app -->
 <!-- TODO: How to integrate this template with the submission process? -->
 
 This is a template for writing RWDS articles in [`Quarto`](https://quarto.org). Please insert graphs and tables as static objects, i.e. `.png` files or markdown tables, rather than generating them by code, as it otherwise takes too long to render the full RWDS website.
@@ -258,6 +253,12 @@ To add more media to your article, consider embedding a video:
 <!-- TODO: This leads to weird formatting of the rest of the article. Also: How does this work when hosted? -->
 
 <!-- https://quarto.org/docs/interactive/shiny/ -->
+
+
+## References
+::: {#refs}
+
+:::
 
 
 ``` {r}

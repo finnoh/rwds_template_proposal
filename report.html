@@ -117,6 +117,7 @@ div.csl-indent {
   <li><a href="#figures-and-their-layout" id="toc-figures-and-their-layout" class="nav-link" data-scroll-target="#figures-and-their-layout">Figures and their layout</a></li>
   <li><a href="#creating-diagrams" id="toc-creating-diagrams" class="nav-link" data-scroll-target="#creating-diagrams">Creating diagrams</a></li>
   <li><a href="#some-icing-on-the-cake" id="toc-some-icing-on-the-cake" class="nav-link" data-scroll-target="#some-icing-on-the-cake">Some icing on the cake</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
 </div>
@@ -194,7 +195,7 @@ div.csl-indent {
 <p>By adding your references as BibTeX to the <code>references.bib</code> file in this repository, you not only maintain your references in the right citation style, but you can also cite directly, as recommended by <span class="citation" data-cites="example-bibtexkey">Doe (<a href="#ref-example-bibtexkey" role="doc-biblioref">2020</a>)</span>, or indirectly <span class="citation" data-cites="example-bibtexkey">(see <a href="#ref-example-bibtexkey" role="doc-biblioref">Doe 2020</a>)</span>.</p>
 <p>By writing <code>---</code>, you can add a vertical line.</p>
 <hr>
-<p>If your tutorial includes tips on special keyboard shortcuts, you can typeset them like this: <em>To print, press</em> <kbd>Shift-Ctrl-P</kbd>. <em>To open an existing new project, press</em> <kbd data-mac="Shift-Command-O" data-windows="Shift-Control-O" data-linux="Shift-Ctrl-L"></kbd>.</p>
+<p>If your tutorial includes tips on special keyboard shortcuts, you can typeset them like this: <em>To print, press</em> <kbd>Shift-Ctrl-P</kbd>. <em>To open an existing new project, press</em> <kbd data-linux="Shift-Ctrl-L" data-windows="Shift-Control-O" data-mac="Shift-Command-O"></kbd>.</p>
 <p>You can write equations in-line like this <span class="math inline">\(y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{, }\)</span> or in a separate block like this <span id="eq-first"><span class="math display">\[
 y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{. }
 \tag{1}\]</span></span></p>
@@ -364,11 +365,11 @@ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{. }
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="3" data-code-annotation="1">Take <code>penguins</code>, and then,</span>
+<span data-code-lines="3" data-code-cell="annotated-cell-5" data-code-annotation="1">Take <code>penguins</code>, and then,</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="4,5,6,7" data-code-annotation="2">add new columns for the bill ratio and bill area.</span>
+<span data-code-lines="4,5,6,7" data-code-cell="annotated-cell-5" data-code-annotation="2">add new columns for the bill ratio and bill area.</span>
 </dd>
 </dl>
 </div>
@@ -491,6 +492,17 @@ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{. }
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/wo9vZccmqwc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <!-- TODO: This leads to weird formatting of the rest of the article. Also: How does this work when hosted? -->
 <!-- https://quarto.org/docs/interactive/shiny/ -->
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-example-bibtexkey" class="csl-entry" role="listitem">
+Doe, Jane. 2020. <span>“Great Paper.”</span> <em>Journal of Great Insight</em> 3 (Jan): 993–1022.
+</div>
+</div>
+<div id="cite">
+
+</div>
 <div class="article-btn">
 <p><a href="url">Back to section homepage</a></p>
 </div>
@@ -524,20 +536,24 @@ Author 1 is… and Author 2 is…
 </div>
 </div>
 <!--- TODO: Add the comment section here. --->
-
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-example-bibtexkey" class="csl-entry" role="listitem">
-Doe, Jane. 2020. <span>“Great Paper.”</span> <em>Journal of Great Insight</em> 3 (Jan): 993–1022.
-</div>
-</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
 <li id="fn1"><p>in case you want to give an extra reference or link to a source<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section></div></main>
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{author22023,
+  author = {Author2 , Author1},
+  title = {How to Create an Article for {Real} {World} {Data} {Science}},
+  date = {2023-08-21},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-author22023" class="csl-entry quarto-appendix-citeas" role="listitem">
+Author2, Author1. 2023. <span>“How to Create an Article for Real World
+Data Science.”</span> August 21, 2023.
+</div></div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
