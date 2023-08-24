@@ -35,6 +35,8 @@ citation: true
 
 This is a template for writing RWDS articles in [`Quarto`](https://quarto.org). Please insert graphs and tables as static objects, i.e. `.png` files or markdown tables, rather than generating them by code, as it otherwise takes too long to render the full RWDS website.
 
+One idea for a workflow could be to write your analysis and text directly in the `report.qmd` file, execute your code cells in your local terminal, save figures into the images folder, and import them as files in the `report.qmd`.
+
 <!-- TODO: What about creating the files once and freezing them? Is there a more elegant way? -->
 
 For the content of your writing, make sure to check out the resources on [RWDS---Call for Contributions](https://realworlddatascience.net/contributor-docs/call-for-contributions.html).
@@ -81,7 +83,7 @@ For more information on **cross-references**, see the [Quarto documentation](htt
 
 ### Sub-section: Creating tables
 
-Adding a table in markdown is easy, but can result in some formatting work. Consider using a tool like [tablesgenerator](https://www.tablesgenerator.com/markdown_tables):
+Adding a table in markdown is easy, but can result in some formatting work. Consider using a tool like [tablesgenerator](https://www.tablesgenerator.com/markdown_tables), or the [Visual Editor if you are using R Studio](https://quarto.org/docs/visual-editor/):
 
 | Column 1 | Column 2 | Column 3 |
 | -------- | -------- | -------- |
@@ -189,6 +191,8 @@ and resize them
 
 You can make use of Quarto's options to arrange multiple images in a grid, and link to both URLs and local files. Also, you can add captions to images that contain links. Local images should be stored in the folder `images` and in `.png` format.
 
+You can also cross-reference figures, such as @fig-layout, or subfigures like @fig-repo.
+
 ::: {#fig-layout layout="[1,1,1]"}
 
 ![[Data](https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2006&q=80)](https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2006&q=80){#fig-data}
@@ -201,7 +205,7 @@ Caption for the full figure
 
 :::
 
-On rare occasions, you might want to add an image, graph, equation, table, or simple text in the margin of the page, to further substantiate a claim that you make. Here we put the RWDS logo in the margin.
+Sometimes, you might want to add an image, graph, equation, table, or simple text in the margin of the page, to further substantiate a claim that you make. Here we put the RWDS logo in the margin.
 
 ::: {.column-margin}
 ![RWDS Logo in the maring](https://realworlddatascience.net/images/rwds-logo-150px.png)
@@ -231,6 +235,24 @@ flowchart LR
 ::: {.callout-note style="margin-top: 2.25rem;" appearance="simple"}
 For more information on diagrams, see the [Quarto documentation](https://quarto.org/docs/authoring/diagrams.html).
 :::
+
+## Interactive elements such as Shiny
+
+We welcome interactive elements such as Shiny apps. So far, the easiest way to implement these apps is to host them on your own and embed them in this article as an HTML iframe object.
+
+One example workflow could be:
+1. Create a Shiny app and host it on your server, e.g. on [shinyapps.io](https://www.shinyapps.io/) (free option).
+2. You can then embed the app in your article as an [HTML iframe](https://support.posit.co/hc/en-us/articles/217592607-Can-I-embed-iframe-Shiny-apps-in-other-websites-from-RStudio-Connect-)
+
+The iframe could look like this (replace `www.your_shiny_dashboard` with the URL of your app):
+
+```{html}
+ <iframe src="www.your_shiny_dashboard" style="border: none; width: 100%; height: 500px" frameborder="0"></iframe>
+```
+
+Paste this code directly into your `.qmd` file to implement the HTML iframe.
+
+You can find an example in [*Using 'Basket Complementarity' to make Product Recommendations on RWDS*](https://realworlddatascience.net/ideas/datasciencebites/posts/2023/03/02/basket-complementarity.html).
 
 ## Some icing on the cake
 

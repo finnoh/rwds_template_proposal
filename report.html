@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Author1, Author2">
-<meta name="dcterms.date" content="2023-08-21">
+<meta name="dcterms.date" content="2023-08-24">
 <meta name="description" content="A template to help contributors style their articles and make use of different Quarto features.">
 
 <title>How to create an article for Real World Data Science</title>
@@ -116,6 +116,7 @@ div.csl-indent {
   <li><a href="#another-main-section-writing-code" id="toc-another-main-section-writing-code" class="nav-link" data-scroll-target="#another-main-section-writing-code">Another main section: Writing code</a></li>
   <li><a href="#figures-and-their-layout" id="toc-figures-and-their-layout" class="nav-link" data-scroll-target="#figures-and-their-layout">Figures and their layout</a></li>
   <li><a href="#creating-diagrams" id="toc-creating-diagrams" class="nav-link" data-scroll-target="#creating-diagrams">Creating diagrams</a></li>
+  <li><a href="#interactive-elements-such-as-shiny" id="toc-interactive-elements-such-as-shiny" class="nav-link" data-scroll-target="#interactive-elements-such-as-shiny">Interactive elements such as Shiny</a></li>
   <li><a href="#some-icing-on-the-cake" id="toc-some-icing-on-the-cake" class="nav-link" data-scroll-target="#some-icing-on-the-cake">Some icing on the cake</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
@@ -152,7 +153,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 21, 2023</p>
+      <p class="date">August 24, 2023</p>
     </div>
   </div>
   
@@ -162,13 +163,9 @@ div.csl-indent {
 
 </header>
 
-<!-- TODO: Should we have the YAML citation=true? It might make things more coherent -->
-<!-- TODO: Insert some bullet points on writing tips -->
-<!-- TODO: Improve the structure of the article -->
-<!-- TODO: Does this work with the Shiny app online? -->
-<!-- TODO: Set server: shiny in case we run shiny app -->
 <!-- TODO: How to integrate this template with the submission process? -->
 <p>This is a template for writing RWDS articles in <a href="https://quarto.org"><code>Quarto</code></a>. Please insert graphs and tables as static objects, i.e.&nbsp;<code>.png</code> files or markdown tables, rather than generating them by code, as it otherwise takes too long to render the full RWDS website.</p>
+<p>One idea for a workflow could be to write your analysis and text directly in the <code>report.qmd</code> file, execute your code cells in your local terminal, save figures into the images folder, and import them as files in the <code>report.qmd</code>.</p>
 <!-- TODO: What about creating the files once and freezing them? Is there a more elegant way? -->
 <p>For the content of your writing, make sure to check out the resources on <a href="https://realworlddatascience.net/contributor-docs/call-for-contributions.html">RWDS—Call for Contributions</a>.</p>
 <section id="a-main-section-about-writing-text" class="level2">
@@ -195,7 +192,7 @@ div.csl-indent {
 <p>By adding your references as BibTeX to the <code>references.bib</code> file in this repository, you not only maintain your references in the right citation style, but you can also cite directly, as recommended by <span class="citation" data-cites="example-bibtexkey">Doe (<a href="#ref-example-bibtexkey" role="doc-biblioref">2020</a>)</span>, or indirectly <span class="citation" data-cites="example-bibtexkey">(see <a href="#ref-example-bibtexkey" role="doc-biblioref">Doe 2020</a>)</span>.</p>
 <p>By writing <code>---</code>, you can add a vertical line.</p>
 <hr>
-<p>If your tutorial includes tips on special keyboard shortcuts, you can typeset them like this: <em>To print, press</em> <kbd>Shift-Ctrl-P</kbd>. <em>To open an existing new project, press</em> <kbd data-linux="Shift-Ctrl-L" data-windows="Shift-Control-O" data-mac="Shift-Command-O"></kbd>.</p>
+<p>If your tutorial includes tips on special keyboard shortcuts, you can typeset them like this: <em>To print, press</em> <kbd>Shift-Ctrl-P</kbd>. <em>To open an existing new project, press</em> <kbd data-mac="Shift-Command-O" data-linux="Shift-Ctrl-L" data-windows="Shift-Control-O"></kbd>.</p>
 <p>You can write equations in-line like this <span class="math inline">\(y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{, }\)</span> or in a separate block like this <span id="eq-first"><span class="math display">\[
 y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{. }
 \tag{1}\]</span></span></p>
@@ -212,7 +209,7 @@ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{. }
 </div>
 <section id="sub-section-creating-tables" class="level3">
 <h3 class="anchored" data-anchor-id="sub-section-creating-tables">Sub-section: Creating tables</h3>
-<p>Adding a table in markdown is easy, but can result in some formatting work. Consider using a tool like <a href="https://www.tablesgenerator.com/markdown_tables">tablesgenerator</a>:</p>
+<p>Adding a table in markdown is easy, but can result in some formatting work. Consider using a tool like <a href="https://www.tablesgenerator.com/markdown_tables">tablesgenerator</a>, or the <a href="https://quarto.org/docs/visual-editor/">Visual Editor if you are using R Studio</a>:</p>
 <div id="tbl-example" class="anchored">
 <table class="table">
 <caption>Table&nbsp;1: Example table with a caption</caption>
@@ -365,11 +362,11 @@ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{. }
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="3" data-code-cell="annotated-cell-5" data-code-annotation="1">Take <code>penguins</code>, and then,</span>
+<span data-code-annotation="1" data-code-lines="3" data-code-cell="annotated-cell-5">Take <code>penguins</code>, and then,</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="4,5,6,7" data-code-cell="annotated-cell-5" data-code-annotation="2">add new columns for the bill ratio and bill area.</span>
+<span data-code-annotation="2" data-code-lines="4,5,6,7" data-code-cell="annotated-cell-5">add new columns for the bill ratio and bill area.</span>
 </dd>
 </dl>
 </div>
@@ -382,6 +379,7 @@ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{. }
 <p>and resize them</p>
 <p><img src="https://realworlddatascience.net/images/rwds-logo-150px.png" class="img-fluid" style="width:10.0%"></p>
 <p>You can make use of Quarto’s options to arrange multiple images in a grid, and link to both URLs and local files. Also, you can add captions to images that contain links. Local images should be stored in the folder <code>images</code> and in <code>.png</code> format.</p>
+<p>You can also cross-reference figures, such as <a href="#fig-layout">Figure&nbsp;1</a>, or subfigures like <a href="#fig-repo">Figure&nbsp;1 (c)</a>.</p>
 <div id="fig-layout" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -413,7 +411,7 @@ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{. }
 <p></p><figcaption class="figure-caption">Figure&nbsp;1: Caption for the full figure</figcaption><p></p>
 </figure>
 </div>
-<p>On rare occasions, you might want to add an image, graph, equation, table, or simple text in the margin of the page, to further substantiate a claim that you make. Here we put the RWDS logo in the margin.</p>
+<p>Sometimes, you might want to add an image, graph, equation, table, or simple text in the margin of the page, to further substantiate a claim that you make. Here we put the RWDS logo in the margin.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
@@ -464,6 +462,17 @@ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{. }
 </div>
 </div>
 </section>
+<section id="interactive-elements-such-as-shiny" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-elements-such-as-shiny">Interactive elements such as Shiny</h2>
+<p>We welcome interactive elements such as Shiny apps. So far, the easiest way to implement these apps is to host them on your own and embed them in this article as an HTML iframe object.</p>
+<p>One example workflow could be: 1. Create a Shiny app and host it on your server, e.g.&nbsp;on <a href="https://www.shinyapps.io/">shinyapps.io</a> (free option). 2. You can then embed the app in your article as an <a href="https://support.posit.co/hc/en-us/articles/217592607-Can-I-embed-iframe-Shiny-apps-in-other-websites-from-RStudio-Connect-">HTML iframe</a></p>
+<p>The iframe could look like this (replace <code>www.your_shiny_dashboard</code> with the URL of your app):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a> <span class="kw">&lt;iframe</span> <span class="er">src</span><span class="ot">=</span><span class="st">"www.your_shiny_dashboard"</span> <span class="er">style</span><span class="ot">=</span><span class="st">"border: none; width: 100%; height: 500px"</span> <span class="er">frameborder</span><span class="ot">=</span><span class="st">"0"</span><span class="kw">&gt;&lt;/iframe&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Paste this code directly into your <code>.qmd</code> file to implement the HTML iframe.</p>
+<p>You can find an example in <a href="https://realworlddatascience.net/ideas/datasciencebites/posts/2023/03/02/basket-complementarity.html"><em>Using ‘Basket Complementarity’ to make Product Recommendations on RWDS</em></a>.</p>
+</section>
 <section id="some-icing-on-the-cake" class="level2">
 <h2 class="anchored" data-anchor-id="some-icing-on-the-cake">Some icing on the cake</h2>
 <p>You can add a warning to your writing like this:</p>
@@ -499,9 +508,6 @@ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \text{. }
 <div id="ref-example-bibtexkey" class="csl-entry" role="listitem">
 Doe, Jane. 2020. <span>“Great Paper.”</span> <em>Journal of Great Insight</em> 3 (Jan): 993–1022.
 </div>
-</div>
-<div id="cite">
-
 </div>
 <div class="article-btn">
 <p><a href="url">Back to section homepage</a></p>
@@ -547,12 +553,12 @@ Author 1 is… and Author 2 is…
 </section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{author22023,
   author = {Author2 , Author1},
   title = {How to Create an Article for {Real} {World} {Data} {Science}},
-  date = {2023-08-21},
+  date = {2023-08-24},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-author22023" class="csl-entry quarto-appendix-citeas" role="listitem">
 Author2, Author1. 2023. <span>“How to Create an Article for Real World
-Data Science.”</span> August 21, 2023.
+Data Science.”</span> August 24, 2023.
 </div></div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
